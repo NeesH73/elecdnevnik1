@@ -21,14 +21,14 @@ namespace elecdnevnik
         {
             this.Validate();
             this.studentsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
+            
 
         }
 
         private void GroupEditForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Students". При необходимости она может быть перемещена или удалена.
-            this.studentsTableAdapter.Fill(this.databaseDataSet.Students);
+            
 
         }
     }

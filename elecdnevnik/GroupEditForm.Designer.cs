@@ -36,11 +36,8 @@
             System.Windows.Forms.Label otchestvoLabel;
             System.Windows.Forms.Label loginLabel;
             System.Windows.Forms.Label passLabel;
-            System.Windows.Forms.Label groupNumberLabel;
-            this.databaseDataSet = new elecdnevnik.DatabaseDataSet();
-            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentsTableAdapter = new elecdnevnik.DatabaseDataSetTableAdapters.StudentsTableAdapter();
-            this.tableAdapterManager = new elecdnevnik.DatabaseDataSetTableAdapters.TableAdapterManager();
+            System.Windows.Forms.Label groupNumberLabel;      
+            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);                       
             this.studentsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -76,7 +73,7 @@
             loginLabel = new System.Windows.Forms.Label();
             passLabel = new System.Windows.Forms.Label();
             groupNumberLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+           
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingNavigator)).BeginInit();
             this.studentsBindingNavigator.SuspendLayout();
@@ -85,25 +82,21 @@
             // 
             // databaseDataSet
             // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            
             // 
             // studentsBindingSource
             // 
             this.studentsBindingSource.DataMember = "Students";
-            this.studentsBindingSource.DataSource = this.databaseDataSet;
+            
             // 
             // studentsTableAdapter
             // 
-            this.studentsTableAdapter.ClearBeforeFill = true;
+            
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.AdminTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.StudentsTableAdapter = this.studentsTableAdapter;
-            this.tableAdapterManager.TeacherTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = elecdnevnik.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            
+           
             // 
             // studentsBindingNavigator
             // 
@@ -449,8 +442,7 @@
             this.Controls.Add(this.studentsBindingNavigator);
             this.Name = "GroupEditForm";
             this.Text = "GroupEditForm";
-            this.Load += new System.EventHandler(this.GroupEditForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            this.Load += new System.EventHandler(this.GroupEditForm_Load);           
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingNavigator)).EndInit();
             this.studentsBindingNavigator.ResumeLayout(false);
@@ -462,11 +454,8 @@
         }
 
         #endregion
-
-        private DatabaseDataSet databaseDataSet;
-        private System.Windows.Forms.BindingSource studentsBindingSource;
-        private DatabaseDataSetTableAdapters.StudentsTableAdapter studentsTableAdapter;
-        private DatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+       
+        private System.Windows.Forms.BindingSource studentsBindingSource;      
         private System.Windows.Forms.BindingNavigator studentsBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
