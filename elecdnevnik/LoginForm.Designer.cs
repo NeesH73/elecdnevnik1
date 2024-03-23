@@ -1,6 +1,6 @@
 ﻿namespace elecdnevnik
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.enter_text = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +39,9 @@
             this.dateTime = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // enter_text
@@ -47,30 +49,30 @@
             this.enter_text.AutoSize = true;
             this.enter_text.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.enter_text.ForeColor = System.Drawing.Color.Black;
-            this.enter_text.Location = new System.Drawing.Point(0, 88);
-            this.enter_text.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.enter_text.Location = new System.Drawing.Point(0, 169);
+            this.enter_text.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.enter_text.Name = "enter_text";
-            this.enter_text.Size = new System.Drawing.Size(377, 22);
+            this.enter_text.Size = new System.Drawing.Size(719, 42);
             this.enter_text.TabIndex = 0;
             this.enter_text.Text = "Вход в программу электронного дневника";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 147);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(316, 283);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(71, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Логин";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(158, 183);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(316, 352);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(86, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Пароль";
             // 
@@ -78,10 +80,10 @@
             // 
             this.btExit.BackColor = System.Drawing.Color.LightCoral;
             this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExit.Location = new System.Drawing.Point(308, -1);
-            this.btExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btExit.Location = new System.Drawing.Point(616, -2);
+            this.btExit.Margin = new System.Windows.Forms.Padding(4);
             this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(68, 25);
+            this.btExit.Size = new System.Drawing.Size(136, 48);
             this.btExit.TabIndex = 3;
             this.btExit.Text = "Выход";
             this.btExit.UseVisualStyleBackColor = false;
@@ -91,10 +93,10 @@
             // 
             this.btEnter.BackColor = System.Drawing.Color.LightGreen;
             this.btEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEnter.Location = new System.Drawing.Point(255, 218);
-            this.btEnter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEnter.Location = new System.Drawing.Point(510, 419);
+            this.btEnter.Margin = new System.Windows.Forms.Padding(4);
             this.btEnter.Name = "btEnter";
-            this.btEnter.Size = new System.Drawing.Size(60, 25);
+            this.btEnter.Size = new System.Drawing.Size(120, 48);
             this.btEnter.TabIndex = 4;
             this.btEnter.Text = "Войти";
             this.btEnter.UseVisualStyleBackColor = false;
@@ -102,18 +104,18 @@
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(222, 146);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTextBox.Location = new System.Drawing.Point(444, 281);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(122, 20);
+            this.usernameTextBox.Size = new System.Drawing.Size(240, 31);
             this.usernameTextBox.TabIndex = 5;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(222, 179);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTextBox.Location = new System.Drawing.Point(444, 344);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(122, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(240, 31);
             this.passwordTextBox.TabIndex = 6;
             // 
             // dateTime
@@ -122,40 +124,46 @@
             this.dateTime.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateTime.Enabled = false;
             this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTime.Location = new System.Drawing.Point(4, 3);
-            this.dateTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTime.Location = new System.Drawing.Point(8, 6);
+            this.dateTime.Margin = new System.Windows.Forms.Padding(4);
             this.dateTime.Name = "dateTime";
             this.dateTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTime.Size = new System.Drawing.Size(76, 20);
+            this.dateTime.Size = new System.Drawing.Size(148, 31);
             this.dateTime.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(61, 3);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(122, 6);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(65, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(126, 31);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::elecdnevnik.Properties.Resources._32730184_dnevnik_raskraska_34;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 121);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 233);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 135);
+            this.pictureBox1.Size = new System.Drawing.Size(270, 260);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // fileSystemWatcher1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher1_Changed);
+            // 
+            // LoginForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(382, 262);
+            this.ClientSize = new System.Drawing.Size(764, 504);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dateTime);
@@ -167,11 +175,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.enter_text);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,6 +198,7 @@
         private System.Windows.Forms.DateTimePicker dateTime;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
 

@@ -70,6 +70,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btGroupEdit);
             this.Name = "AdminMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminMenuForm";
             this.ResumeLayout(false);
 

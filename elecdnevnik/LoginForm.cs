@@ -14,9 +14,9 @@ using MySql.Data.MySqlClient;
 
 namespace elecdnevnik
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -72,6 +72,11 @@ namespace elecdnevnik
                 this.Hide();
             }
             else { MessageBox.Show("Неправильный логин или пароль"); }
+        }
+
+        private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
+        {
+
         }
     }
 }

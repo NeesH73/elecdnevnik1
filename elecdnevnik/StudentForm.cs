@@ -26,7 +26,7 @@ namespace elecdnevnik
 
         private void btnvozr1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            LoginForm form1 = new LoginForm();
             form1.Show();
             this.Hide();
         }
