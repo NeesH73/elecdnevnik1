@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 23, 2024 at 11:44 PM
+-- Generation Time: Mar 24, 2024 at 03:59 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -48,6 +48,7 @@ INSERT INTO `admin` (`id`, `login`, `pass`) VALUES
 
 CREATE TABLE `friday` (
   `id` int(10) UNSIGNED NOT NULL,
+  `groupNumb` varchar(50) NOT NULL,
   `time` varchar(20) NOT NULL,
   `subject` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -56,9 +57,9 @@ CREATE TABLE `friday` (
 -- Dumping data for table `friday`
 --
 
-INSERT INTO `friday` (`id`, `time`, `subject`) VALUES
-(1, '10:10-11:40', 'Физическая культура'),
-(2, '12:10-13:40', 'История России');
+INSERT INTO `friday` (`id`, `groupNumb`, `time`, `subject`) VALUES
+(1, '09-322', '10:10-11:40', 'Физическая культура'),
+(2, '09-322', '12:10-13:40', 'История России');
 
 -- --------------------------------------------------------
 
@@ -68,6 +69,7 @@ INSERT INTO `friday` (`id`, `time`, `subject`) VALUES
 
 CREATE TABLE `monday` (
   `id` int(10) UNSIGNED NOT NULL,
+  `groupNumb` varchar(50) NOT NULL,
   `time` varchar(20) NOT NULL,
   `subject` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -76,11 +78,11 @@ CREATE TABLE `monday` (
 -- Dumping data for table `monday`
 --
 
-INSERT INTO `monday` (`id`, `time`, `subject`) VALUES
-(1, '8:30-10:00', 'Математический анализ'),
-(2, '10:10-11:40', 'Иностранный язык'),
-(3, '12:10-13:40', 'Математический анализ'),
-(4, '13:50-15:20', 'История России');
+INSERT INTO `monday` (`id`, `groupNumb`, `time`, `subject`) VALUES
+(1, '09-322', '8:30-10:00', 'Математический анализ'),
+(2, '09-322', '10:10-11:40', 'Иностранный язык'),
+(3, '09-322', '12:10-13:40', 'Математический анализ'),
+(4, '09-322', '13:50-15:20', 'История России');
 
 -- --------------------------------------------------------
 
@@ -90,6 +92,7 @@ INSERT INTO `monday` (`id`, `time`, `subject`) VALUES
 
 CREATE TABLE `saturday` (
   `id` int(11) UNSIGNED NOT NULL,
+  `groupNumb` varchar(50) NOT NULL,
   `time` varchar(32) NOT NULL,
   `subject` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -98,9 +101,9 @@ CREATE TABLE `saturday` (
 -- Dumping data for table `saturday`
 --
 
-INSERT INTO `saturday` (`id`, `time`, `subject`) VALUES
-(1, '12:10-13:40', 'Ознакомительная практика'),
-(2, '13:50-15:20', 'Разработка приложений на C#');
+INSERT INTO `saturday` (`id`, `groupNumb`, `time`, `subject`) VALUES
+(1, '09-322', '12:10-13:40', 'Ознакомительная практика'),
+(2, '09-322', '13:50-15:20', 'Разработка приложений на C#');
 
 -- --------------------------------------------------------
 
@@ -110,6 +113,7 @@ INSERT INTO `saturday` (`id`, `time`, `subject`) VALUES
 
 CREATE TABLE `thursday` (
   `id` int(10) UNSIGNED NOT NULL,
+  `groupNumb` varchar(50) NOT NULL,
   `time` varchar(20) NOT NULL,
   `subject` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -118,10 +122,10 @@ CREATE TABLE `thursday` (
 -- Dumping data for table `thursday`
 --
 
-INSERT INTO `thursday` (`id`, `time`, `subject`) VALUES
-(1, '8:30-10:00', 'Алгебра и геометрия'),
-(2, '10:10-11:40', 'Математический анализ'),
-(3, '12:10-13:40', 'Алгебра и геометрия');
+INSERT INTO `thursday` (`id`, `groupNumb`, `time`, `subject`) VALUES
+(1, '09-322', '8:30-10:00', 'Алгебра и геометрия'),
+(2, '09-322', '10:10-11:40', 'Математический анализ'),
+(3, '09-322', '12:10-13:40', 'Алгебра и геометрия');
 
 -- --------------------------------------------------------
 
@@ -131,6 +135,7 @@ INSERT INTO `thursday` (`id`, `time`, `subject`) VALUES
 
 CREATE TABLE `tuesday` (
   `id` int(10) UNSIGNED NOT NULL,
+  `groupNumb` varchar(50) NOT NULL,
   `time` varchar(20) NOT NULL,
   `subject` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -139,10 +144,10 @@ CREATE TABLE `tuesday` (
 -- Dumping data for table `tuesday`
 --
 
-INSERT INTO `tuesday` (`id`, `time`, `subject`) VALUES
-(1, '10:10-11:40', 'Физическая культура'),
-(2, '12:10-13:40', 'Русский язык'),
-(3, '13:50-15:20', 'Русский язык');
+INSERT INTO `tuesday` (`id`, `groupNumb`, `time`, `subject`) VALUES
+(1, '09-322', '10:10-11:40', 'Физическая культура'),
+(2, '09-322', '12:10-13:40', 'Русский язык'),
+(3, '09-322', '13:50-15:20', 'Русский язык');
 
 -- --------------------------------------------------------
 
@@ -173,6 +178,7 @@ INSERT INTO `user` (`id`, `login`, `pass`, `groupNumb`, `fullName`) VALUES
 
 CREATE TABLE `wednesday` (
   `id` int(10) UNSIGNED NOT NULL,
+  `groupNumb` varchar(50) NOT NULL,
   `time` varchar(20) NOT NULL,
   `subject` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -181,10 +187,10 @@ CREATE TABLE `wednesday` (
 -- Dumping data for table `wednesday`
 --
 
-INSERT INTO `wednesday` (`id`, `time`, `subject`) VALUES
-(1, '10:10-11:40', 'Противодействия коррупции'),
-(2, '12:10-13:40', 'Противодействия коррупции'),
-(3, '15:50-17:20', 'Математический анализ');
+INSERT INTO `wednesday` (`id`, `groupNumb`, `time`, `subject`) VALUES
+(1, '09-322', '10:10-11:40', 'Противодействия коррупции'),
+(2, '09-322', '12:10-13:40', 'Противодействия коррупции'),
+(3, '09-322', '15:50-17:20', 'Математический анализ');
 
 --
 -- Indexes for dumped tables
@@ -264,7 +270,7 @@ ALTER TABLE `monday`
 -- AUTO_INCREMENT for table `saturday`
 --
 ALTER TABLE `saturday`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `thursday`
@@ -282,7 +288,7 @@ ALTER TABLE `tuesday`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `wednesday`
