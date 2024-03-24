@@ -109,6 +109,12 @@
     <Compile Include="Raspform.Designer.cs">
       <DependentUpon>Raspform.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleEditForm.Designer.cs">
+      <DependentUpon>ScheduleEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raspform.resx">
       <DependentUpon>Raspform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleEditForm.resx">
+      <DependentUpon>ScheduleEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentForm.resx">
       <DependentUpon>StudentForm.cs</DependentUpon>

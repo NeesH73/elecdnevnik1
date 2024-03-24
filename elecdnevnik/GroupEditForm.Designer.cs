@@ -63,7 +63,7 @@
             this.StudentGW.Name = "StudentGW";
             this.StudentGW.RowHeadersWidth = 82;
             this.StudentGW.RowTemplate.Height = 33;
-            this.StudentGW.Size = new System.Drawing.Size(1476, 507);
+            this.StudentGW.Size = new System.Drawing.Size(1407, 507);
             this.StudentGW.TabIndex = 1;
             // 
             // btAdd
@@ -147,7 +147,7 @@
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(1332, 780);
+            this.btDelete.Location = new System.Drawing.Point(1263, 771);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(132, 72);
             this.btDelete.TabIndex = 11;
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1470, 848);
+            this.ClientSize = new System.Drawing.Size(1431, 848);
             this.Controls.Add(this.btUpd);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.tbFullName);
