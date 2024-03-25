@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2024 at 03:59 PM
+-- Generation Time: Mar 25, 2024 at 07:08 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -39,6 +39,32 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `login`, `pass`) VALUES
 (1, 'admin', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exam`
+--
+
+CREATE TABLE `exam` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `login` varchar(50) NOT NULL,
+  `groupNumb` varchar(10) NOT NULL,
+  `fullName` varchar(50) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `examType` varchar(50) NOT NULL,
+  `grade` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `exam`
+--
+
+INSERT INTO `exam` (`id`, `login`, `groupNumb`, `fullName`, `subject`, `examType`, `grade`) VALUES
+(1, 'user', '09-322', 'ivan', 'matan', 'Экзамен', '100'),
+(2, 'user', '123', '123', '123', 'Зачет', '123'),
+(3, '123', '123', '123', '123', 'Зачет', '123'),
+(4, '123', '123', '123', '123', 'Зачет', '123');
 
 -- --------------------------------------------------------
 
@@ -168,7 +194,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `login`, `pass`, `groupNumb`, `fullName`) VALUES
-(1, 'user', '123', '09-322', 'ivanov ivan ivanivich');
+(1, 'user', '123', '09-322', 'ivanov ivan ivanovich'),
+(3, 'user1', '123', '09-322', 'Petrov Petr Petrovich');
 
 -- --------------------------------------------------------
 
@@ -201,6 +228,12 @@ INSERT INTO `wednesday` (`id`, `groupNumb`, `time`, `subject`) VALUES
 --
 ALTER TABLE `admin`
   ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indexes for table `exam`
+--
+ALTER TABLE `exam`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `friday`
@@ -236,7 +269,8 @@ ALTER TABLE `tuesday`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `login` (`login`);
 
 --
 -- Indexes for table `wednesday`
@@ -255,6 +289,12 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `exam`
+--
+ALTER TABLE `exam`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `friday`
 --
 ALTER TABLE `friday`
@@ -270,7 +310,7 @@ ALTER TABLE `monday`
 -- AUTO_INCREMENT for table `saturday`
 --
 ALTER TABLE `saturday`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `thursday`
@@ -288,7 +328,7 @@ ALTER TABLE `tuesday`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `wednesday`
