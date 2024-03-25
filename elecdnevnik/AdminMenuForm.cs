@@ -42,5 +42,19 @@ namespace elecdnevnik
             }
             else { this.Show(); }
         }
+
+        private void return_Click(object sender, EventArgs e)
+        {
+            LoginForm log1 = new LoginForm();
+            log1.Show();
+            this.Hide();
+        }
+
+        private void ExamGradeAdd(object sender, EventArgs e)
+        {
+            ExamGradeAddForm exam = new ExamGradeAddForm();
+            exam.Show();
+            this.Hide();
+        }
     }
 }

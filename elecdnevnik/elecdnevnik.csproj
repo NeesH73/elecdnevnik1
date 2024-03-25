@@ -83,6 +83,12 @@
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="dbconnect.cs" />
+    <Compile Include="ExamGradeAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamGradeAddForm.Designer.cs">
+      <DependentUpon>ExamGradeAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="AdminMenuForm.resx">
       <DependentUpon>AdminMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamGradeAddForm.resx">
+      <DependentUpon>ExamGradeAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

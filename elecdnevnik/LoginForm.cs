@@ -16,8 +16,10 @@ namespace elecdnevnik
 {
     public partial class LoginForm : Form
     {
+        
         public LoginForm()
         {
+            
             InitializeComponent();
         }
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;Connect Timeout=30");
@@ -35,6 +37,7 @@ namespace elecdnevnik
         }
         private void btEnter_Click(object sender, EventArgs e)
         {
+            
             String loginuser = usernameTextBox.Text;
             String passuser = passwordTextBox.Text;
             dbconnect db = new dbconnect();

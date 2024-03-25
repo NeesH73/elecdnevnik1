@@ -37,7 +37,7 @@ namespace elecdnevnik
 
         private void btnsr_Click(object sender, EventArgs e)
         {
-           
+            
             string quary = "SELECT * FROM wednesday";
             db.MySqlReturnData(quary, dataGridView1);
         }

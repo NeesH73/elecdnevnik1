@@ -32,6 +32,7 @@
             this.btScheduleEdit = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btGroupEdit
@@ -62,10 +63,11 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Проставление баллов";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.ExamGradeAdd);
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(875, 12);
+            this.btExit.Location = new System.Drawing.Point(875, 567);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(131, 56);
             this.btExit.TabIndex = 3;
@@ -73,11 +75,22 @@
             this.btExit.UseVisualStyleBackColor = true;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(35, 558);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(251, 65);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Сменить пользователя";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.return_Click);
+            // 
             // AdminMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 635);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btScheduleEdit);
@@ -95,5 +108,6 @@
         private System.Windows.Forms.Button btScheduleEdit;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -47,30 +47,45 @@ namespace elecdnevnik
             
             dbconnect db = new dbconnect();
             MySqlCommand cmd = new MySqlCommand("INSERT INTO `user` ( `login`, `pass`, `groupNumb`, `fullName`) VALUES(@login, @pass, @grpNumb, @name)", db.GetConnection());
-            
-            cmd.Parameters.Add("@login", MySqlDbType.VarChar).Value = tbLogin.Text;
-            cmd.Parameters.Add("@pass", MySqlDbType.VarChar).Value = tbPass.Text;
-            cmd.Parameters.Add("@grpNumb", MySqlDbType.VarChar).Value = tbGroupNumb.Text;
-            cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = tbFullName.Text;
-            db.OpenConnection();
-            if (cmd.ExecuteNonQuery() == 1)
+            if (tbLogin.Text == "" || tbPass.Text == "" || tbGroupNumb.Text == "" || tbFullName.Text == "")
             {
-                timer1.Start();
-                MessageBox.Show("Студент добавлен");
-                tbGroupNumb.Clear();
-                tbLogin.Clear();
-                tbPass.Clear();
-                tbFullName.Clear();
+                MessageBox.Show("Вы ввели не все данные.");
             }
             else
             {
-                MessageBox.Show("Произошла ошибка, студент не был добавлен");
+                try
+                {
+                    cmd.Parameters.Add("@login", MySqlDbType.VarChar).Value = tbLogin.Text;
+                    cmd.Parameters.Add("@pass", MySqlDbType.VarChar).Value = tbPass.Text;
+                    cmd.Parameters.Add("@grpNumb", MySqlDbType.VarChar).Value = tbGroupNumb.Text;
+                    cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = tbFullName.Text;
+                    db.OpenConnection();
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        
+                        MessageBox.Show("Студент добавлен");
+                        refreshGW();
+                        tbGroupNumb.Clear();
+                        tbLogin.Clear();
+                        tbPass.Clear();
+                        tbFullName.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Произошла ошибка, студент не был добавлен");
+                    }
+
+                    db.CloseConnection();
+                   
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Студент с таким логином уже существует!");
+
+                    tbLogin.Clear();
+
+                }
             }
-
-            db.CloseConnection();
-            timer1.Stop();
-            
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace elecdnevnik
         public StudentForm()
         {
             InitializeComponent();
+            
         }
 
         private void btnrasp_Click(object sender, EventArgs e)
