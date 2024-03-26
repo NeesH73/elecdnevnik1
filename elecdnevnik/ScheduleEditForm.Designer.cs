@@ -40,13 +40,13 @@
             this.btDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbGroupNumb = new System.Windows.Forms.TextBox();
-            this.tbTime = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbSubject = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbDayOfWeek = new System.Windows.Forms.ComboBox();
             this.btBack = new System.Windows.Forms.Button();
+            this.cbTime = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGW)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,13 +172,6 @@
             this.tbGroupNumb.Size = new System.Drawing.Size(267, 31);
             this.tbGroupNumb.TabIndex = 11;
             // 
-            // tbTime
-            // 
-            this.tbTime.Location = new System.Drawing.Point(1106, 312);
-            this.tbTime.Name = "tbTime";
-            this.tbTime.Size = new System.Drawing.Size(267, 31);
-            this.tbTime.TabIndex = 13;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -238,17 +231,31 @@
             this.btBack.UseVisualStyleBackColor = true;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
+            // cbTime
+            // 
+            this.cbTime.FormattingEnabled = true;
+            this.cbTime.Items.AddRange(new object[] {
+            "8:30-10:00",
+            "10:10-11:40",
+            "12:10-13:40",
+            "13:50-15:20",
+            "15:30-17:00"});
+            this.cbTime.Location = new System.Drawing.Point(1106, 305);
+            this.cbTime.Name = "cbTime";
+            this.cbTime.Size = new System.Drawing.Size(267, 33);
+            this.cbTime.TabIndex = 20;
+            // 
             // ScheduleEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1385, 757);
+            this.Controls.Add(this.cbTime);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.cbDayOfWeek);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbSubject);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbGroupNumb);
             this.Controls.Add(this.label1);
@@ -285,12 +292,12 @@
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbGroupNumb;
-        private System.Windows.Forms.TextBox tbTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbSubject;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbDayOfWeek;
         private System.Windows.Forms.Button btBack;
+        private System.Windows.Forms.ComboBox cbTime;
     }
 }

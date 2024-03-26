@@ -69,5 +69,15 @@ namespace elecdnevnik.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ДИСКЕТА {
+            get {
+                object obj = ResourceManager.GetObject("ДИСКЕТА", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

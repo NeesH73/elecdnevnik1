@@ -87,7 +87,7 @@ namespace elecdnevnik
             dbconnect db = new dbconnect();
             MySqlCommand cmd = new MySqlCommand($"INSERT INTO {selectedTable} (`groupNumb`, `time`, `subject`) VALUES(@gn, @t, @s)", db.GetConnection());
 
-            cmd.Parameters.Add("@t", MySqlDbType.VarChar).Value = tbTime.Text;
+            cmd.Parameters.Add("@t", MySqlDbType.VarChar).Value = cbTime.Text;
             cmd.Parameters.Add("@gn", MySqlDbType.VarChar).Value = tbGroupNumb.Text;
             cmd.Parameters.Add("@s", MySqlDbType.VarChar).Value = tbSubject.Text;
             db.OpenConnection();
@@ -96,7 +96,7 @@ namespace elecdnevnik
                 
                 MessageBox.Show("Успешное добавление");
                 tbGroupNumb.Clear();
-                tbTime.Clear();
+                cbTime.Items.Clear();
                 tbSubject.Clear();
 
             }

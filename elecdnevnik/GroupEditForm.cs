@@ -149,23 +149,31 @@ namespace elecdnevnik
                 
                 dbconnect db = new dbconnect();
                 MySqlCommand cmd = new MySqlCommand("UPDATE `user` SET `login` = @login, `pass` = @pass, `groupNumb` = @grpNumb, `fullName` = @name WHERE `ID` = @id", db.GetConnection());
-
-                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-                cmd.Parameters.Add("@login", MySqlDbType.VarChar).Value = login;
-                cmd.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
-                cmd.Parameters.Add("@grpNumb", MySqlDbType.VarChar).Value = groupNumb;
-                cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = fullName;
-
-                db.OpenConnection();
-                if (cmd.ExecuteNonQuery() == 1)
+                try
                 {
-                    MessageBox.Show("Данные обновлены");
+                    cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+                    cmd.Parameters.Add("@login", MySqlDbType.VarChar).Value = login;
+                    cmd.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
+                    cmd.Parameters.Add("@grpNumb", MySqlDbType.VarChar).Value = groupNumb;
+                    cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = fullName;
+
+                    db.OpenConnection();
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Данные обновлены");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Произошла ошибка, данные не были обновлены");
+                    }
+                    db.CloseConnection();
                 }
-                else
+                catch (MySql.Data.MySqlClient.MySqlException)
                 {
-                    MessageBox.Show("Произошла ошибка, данные не были обновлены");
+                    MessageBox.Show("ID и логин должны быть уникальны!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                db.CloseConnection();
+             
+                
             }
             else
             {
