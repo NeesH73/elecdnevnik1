@@ -13,11 +13,11 @@ namespace elecdnevnik
 {
     public partial class ExamGradeAddForm : Form
     {
-        private Class1 db;
+        private GridView db;
         public ExamGradeAddForm()
         {
             InitializeComponent();
-            db = new Class1();
+            db = new GridView();
             string quary = "SELECT * FROM exam";
             db.MySqlReturnData(quary, examGradeGW);
         }

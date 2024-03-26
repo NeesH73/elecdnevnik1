@@ -31,5 +31,13 @@ namespace elecdnevnik
             form1.Show();
             this.Hide();
         }
+
+       
+        private void btnocen_Click_1(object sender, EventArgs e)
+        {
+            Ocenkiform ocenkiform = new Ocenkiform();
+            ocenkiform.Show();
+            this.Hide();
+        }
     }
 }

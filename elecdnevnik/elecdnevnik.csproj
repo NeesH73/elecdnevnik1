@@ -89,6 +89,12 @@
     <Compile Include="ExamGradeAddForm.Designer.cs">
       <DependentUpon>ExamGradeAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ocenkiform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ocenkiform.Designer.cs">
+      <DependentUpon>Ocenkiform.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,12 +106,6 @@
     </Compile>
     <Compile Include="GroupEditForm.Designer.cs">
       <DependentUpon>GroupEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menuform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menuform.Designer.cs">
-      <DependentUpon>Menuform.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,8 +139,8 @@
     <EmbeddedResource Include="GroupEditForm.resx">
       <DependentUpon>GroupEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menuform.resx">
-      <DependentUpon>Menuform.cs</DependentUpon>
+    <EmbeddedResource Include="Ocenkiform.resx">
+      <DependentUpon>Ocenkiform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

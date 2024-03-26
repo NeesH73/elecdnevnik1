@@ -15,11 +15,11 @@ namespace elecdnevnik
 {
     public partial class GroupEditForm : Form
     {
-        private Class1 db;
+        private GridView db;
         public GroupEditForm()
         {
             InitializeComponent();
-            db = new Class1();
+            db = new GridView();
             string quary = "SELECT * FROM user";
             db.MySqlReturnData(quary, StudentGW);
 

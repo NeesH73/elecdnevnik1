@@ -13,11 +13,11 @@ namespace elecdnevnik
 {
     public partial class ScheduleEditForm : Form
     {
-        private Class1 db;
+        private GridView db;
         public ScheduleEditForm()
         {
             InitializeComponent();
-            db = new Class1();
+            db = new GridView();
         }
 
         private void btMonday_Click(object sender, EventArgs e)

@@ -9,7 +9,8 @@ using System.Windows.Forms;
 
 namespace elecdnevnik
 {
-    internal class Class1
+    internal class GridView
+
     {
         public string Stringmy = @"server=localhost;port=3306;username=root;password=root;database=elecdnev";
         public DataTable MySqlReturnData(string quary, DataGridView grid)

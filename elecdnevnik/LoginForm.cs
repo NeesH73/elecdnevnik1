@@ -12,11 +12,16 @@ using System.Configuration;
 using MySql.Data.MySqlClient;
 
 
+
 namespace elecdnevnik
 {
     public partial class LoginForm : Form
     {
-        
+        public static class UserLogin
+        {
+            public static string loginuser {  get; set; }
+        }
+
         public LoginForm()
         {
             
@@ -35,10 +40,11 @@ namespace elecdnevnik
             }
             else { this.Show(); }
         }
+        
         private void btEnter_Click(object sender, EventArgs e)
         {
             
-            String loginuser = usernameTextBox.Text;
+            UserLogin.loginuser = usernameTextBox.Text;
             String passuser = passwordTextBox.Text;
             dbconnect db = new dbconnect();
             DataTable table = new DataTable();
@@ -49,9 +55,9 @@ namespace elecdnevnik
             MySqlCommand command1 = new MySqlCommand("SELECT * FROM `admin` WHERE `login`=@uL1 AND `pass`=@uP1", db.GetConnection());
 
 
-            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginuser;
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = UserLogin.loginuser;
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passuser;
-            command1.Parameters.Add("@uL1", MySqlDbType.VarChar).Value = loginuser;
+            command1.Parameters.Add("@uL1", MySqlDbType.VarChar).Value = UserLogin.loginuser;
             command1.Parameters.Add("@uP1", MySqlDbType.VarChar).Value = passuser;
             adapter.SelectCommand = command;
             adapter.Fill(table);

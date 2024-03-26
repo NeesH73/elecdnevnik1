@@ -15,10 +15,10 @@ namespace elecdnevnik
 {
     public partial class Raspform : Form
     {
-        private Class1 db;
+        private GridView db;
         public Raspform()
         {
-            db = new Class1();
+            db = new GridView();
             InitializeComponent();
         }
         
