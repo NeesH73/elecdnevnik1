@@ -19,9 +19,10 @@ namespace elecdnevnik
     {
         public static class UserLogin
         {
-            public static string loginuser {  get; set; }
+            public static string loginuser { get; set; }
         }
-
+        public static class UserPass
+        { public static string passuser { get; set; } }
         public LoginForm()
         {
             
@@ -45,7 +46,7 @@ namespace elecdnevnik
         {
             
             UserLogin.loginuser = usernameTextBox.Text;
-            String passuser = passwordTextBox.Text;
+            UserPass.passuser = passwordTextBox.Text;
             dbconnect db = new dbconnect();
             DataTable table = new DataTable();
             DataTable table1 = new DataTable();
@@ -56,9 +57,9 @@ namespace elecdnevnik
 
 
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = UserLogin.loginuser;
-            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passuser;
+            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = UserPass.passuser;
             command1.Parameters.Add("@uL1", MySqlDbType.VarChar).Value = UserLogin.loginuser;
-            command1.Parameters.Add("@uP1", MySqlDbType.VarChar).Value = passuser;
+            command1.Parameters.Add("@uP1", MySqlDbType.VarChar).Value = UserPass.passuser;
             adapter.SelectCommand = command;
             adapter.Fill(table);
             adapter.SelectCommand = command1;

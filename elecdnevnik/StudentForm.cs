@@ -39,5 +39,12 @@ namespace elecdnevnik
             ocenkiform.Show();
             this.Hide();
         }
+
+        private void btnkab_Click(object sender, EventArgs e)
+        {
+            LichkabinetForm lichkabinetForm = new LichkabinetForm();
+            lichkabinetForm.Show();
+            this.Hide();
+        }
     }
 }

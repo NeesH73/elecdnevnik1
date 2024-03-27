@@ -75,6 +75,7 @@
             this.btnkab.TabIndex = 3;
             this.btnkab.Text = "Личный кабинет";
             this.btnkab.UseVisualStyleBackColor = true;
+            this.btnkab.Click += new System.EventHandler(this.btnkab_Click);
             // 
             // StudentForm
             // 
