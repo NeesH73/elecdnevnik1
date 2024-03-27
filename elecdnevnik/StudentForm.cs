@@ -46,5 +46,6 @@ namespace elecdnevnik
             lichkabinetForm.Show();
             this.Hide();
         }
+        
     }
 }

@@ -18,11 +18,25 @@ namespace elecdnevnik
             InitializeComponent();
         }
 
-        private void LichkabinetForm_Load(object sender, EventArgs e)
+        
+
+        private void btnvozr_Click(object sender, EventArgs e)
         {
+            StudentForm form = new StudentForm();
+            form.Show();
+            this.Hide();
+
+        }
+
+        private void show(object sender, EventArgs e)
+        {
+            textboxfio.Clear();
+            textboxgrup.Clear();
             dbconnect db = new dbconnect();
             string quary = $"SELECT fullName,groupNumb FROM user WHERE login='{LoginForm.UserLogin.loginuser}'";
             MySqlCommand cm = new MySqlCommand(quary, db.GetConnection());
+            
+
             try
             {
                 db.OpenConnection();
@@ -33,6 +47,7 @@ namespace elecdnevnik
                     {
                         textboxfio.Text = (reader[0].ToString());
                         textboxgrup.Text = (reader[1].ToString());
+                        
                     }
                 }
             }
@@ -40,16 +55,8 @@ namespace elecdnevnik
             {
                 db.CloseConnection();
             }
-
-
-        }
-
-        private void btnvozr_Click(object sender, EventArgs e)
-        {
-            StudentForm form = new StudentForm();
-            form.Show();
-            this.Hide();
-
         }
     }
 }
+    
+
