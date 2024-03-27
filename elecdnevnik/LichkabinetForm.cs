@@ -16,6 +16,30 @@ namespace elecdnevnik
         public LichkabinetForm()
         {
             InitializeComponent();
+            dbconnect db = new dbconnect();
+            string quary = $"SELECT fullName,groupNumb FROM user WHERE login='{LoginForm.UserLogin.loginuser}'";
+            MySqlCommand cm = new MySqlCommand(quary, db.GetConnection());
+
+
+            try
+            {
+                db.OpenConnection();
+
+                using (MySqlDataReader reader = cm.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        textboxfio.Text = (reader[0].ToString());
+                        textboxgrup.Text = (reader[1].ToString());
+
+                    }
+                }
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+            
         }
 
         
@@ -30,31 +54,7 @@ namespace elecdnevnik
 
         private void show(object sender, EventArgs e)
         {
-            textboxfio.Clear();
-            textboxgrup.Clear();
-            dbconnect db = new dbconnect();
-            string quary = $"SELECT fullName,groupNumb FROM user WHERE login='{LoginForm.UserLogin.loginuser}'";
-            MySqlCommand cm = new MySqlCommand(quary, db.GetConnection());
             
-
-            try
-            {
-                db.OpenConnection();
-
-                using (MySqlDataReader reader = cm.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        textboxfio.Text = (reader[0].ToString());
-                        textboxgrup.Text = (reader[1].ToString());
-                        
-                    }
-                }
-            }
-            finally
-            {
-                db.CloseConnection();
-            }
         }
     }
 }
