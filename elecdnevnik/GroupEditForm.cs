@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Data.OleDb;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace elecdnevnik
 {
@@ -39,12 +31,12 @@ namespace elecdnevnik
             string sql = "select * from user";
             MySqlDataAdapter sda = new MySqlDataAdapter(sql, db.GetConnection());
             DataSet ds = new System.Data.DataSet();
-            sda.Fill(ds,"user");
+            sda.Fill(ds, "user");
             StudentGW.DataSource = ds.Tables[0];
         }
         private void btAdd_Click(object sender, EventArgs e)
         {
-            
+
             dbconnect db = new dbconnect();
             MySqlCommand cmd = new MySqlCommand("INSERT INTO `user` ( `login`, `pass`, `groupNumb`, `fullName`) VALUES(@login, @pass, @grpNumb, @name)", db.GetConnection());
             if (tbLogin.Text == "" || tbPass.Text == "" || tbGroupNumb.Text == "" || tbFullName.Text == "")
@@ -62,7 +54,7 @@ namespace elecdnevnik
                     db.OpenConnection();
                     if (cmd.ExecuteNonQuery() == 1)
                     {
-                        
+
                         MessageBox.Show("Студент добавлен");
                         refreshGW();
                         tbGroupNumb.Clear();
@@ -76,7 +68,7 @@ namespace elecdnevnik
                     }
 
                     db.CloseConnection();
-                   
+
                 }
                 catch (Exception ex)
                 {
@@ -88,11 +80,7 @@ namespace elecdnevnik
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            refreshGW();
-            timer1.Start();
-        }
+       
 
         private void btDelete_Click(object sender, EventArgs e)
         {
@@ -102,9 +90,9 @@ namespace elecdnevnik
                 {
                     foreach (DataGridViewRow row in StudentGW.SelectedRows)
                     {
-                        string id = row.Cells["id"].Value.ToString(); 
+                        string id = row.Cells["id"].Value.ToString();
 
-                       
+
                         dbconnect db = new dbconnect();
                         MySqlCommand cmd = new MySqlCommand("DELETE FROM `user` WHERE `ID` = @id", db.GetConnection());
                         cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
@@ -121,7 +109,7 @@ namespace elecdnevnik
                         db.CloseConnection();
                     }
 
-                   
+
                     refreshGW();
                 }
             }
@@ -135,22 +123,24 @@ namespace elecdnevnik
 
         private void btUpd_Click(object sender, EventArgs e)
         {
+
             if (StudentGW.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = StudentGW.SelectedRows[0];
-
-                string id = row.Cells["id"].Value.ToString(); 
-
-                string login = row.Cells["login"].Value.ToString(); 
-                string pass = row.Cells["pass"].Value.ToString(); 
-                string groupNumb = row.Cells["groupNumb"].Value.ToString(); 
-                string fullName = row.Cells["fullName"].Value.ToString(); 
-
-                
-                dbconnect db = new dbconnect();
-                MySqlCommand cmd = new MySqlCommand("UPDATE `user` SET `login` = @login, `pass` = @pass, `groupNumb` = @grpNumb, `fullName` = @name WHERE `ID` = @id", db.GetConnection());
                 try
                 {
+                    DataGridViewRow row = StudentGW.SelectedRows[0];
+                    string id = row.Cells["id"].Value.ToString();
+
+                    string login = row.Cells["login"].Value.ToString();
+                    string pass = row.Cells["pass"].Value.ToString();
+                    string groupNumb = row.Cells["groupNumb"].Value.ToString();
+                    string fullName = row.Cells["fullName"].Value.ToString();
+
+
+
+                    dbconnect db = new dbconnect();
+                    MySqlCommand cmd = new MySqlCommand("UPDATE `user` SET `login` = @login, `pass` = @pass, `groupNumb` = @grpNumb, `fullName` = @name WHERE `ID` = @id", db.GetConnection());
+
                     cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
                     cmd.Parameters.Add("@login", MySqlDbType.VarChar).Value = login;
                     cmd.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
@@ -164,16 +154,20 @@ namespace elecdnevnik
                     }
                     else
                     {
-                        MessageBox.Show("Произошла ошибка, данные не были обновлены");
+                        MessageBox.Show("Вы не можете редактировать id");
                     }
                     db.CloseConnection();
+                    refreshGW();
+
+ 
                 }
+                
                 catch (MySql.Data.MySqlClient.MySqlException)
                 {
                     MessageBox.Show("ID и логин должны быть уникальны!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-             
-                
+
+                refreshGW();
             }
             else
             {
@@ -182,7 +176,8 @@ namespace elecdnevnik
         }
     }
 }
-    
 
-    
+
+
+
 

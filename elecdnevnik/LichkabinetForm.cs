@@ -52,10 +52,7 @@ namespace elecdnevnik
 
         }
 
-        private void show(object sender, EventArgs e)
-        {
-            
-        }
+       
     }
 }
     

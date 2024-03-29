@@ -43,10 +43,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbSubject = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbDayOfWeek = new System.Windows.Forms.ComboBox();
             this.btBack = new System.Windows.Forms.Button();
             this.cbTime = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbDayOfWeek = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGW)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,30 +197,6 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Предмет";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1168, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 25);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "День недели";
-            // 
-            // cbDayOfWeek
-            // 
-            this.cbDayOfWeek.FormattingEnabled = true;
-            this.cbDayOfWeek.Items.AddRange(new object[] {
-            "monday",
-            "tuesday",
-            "wednesday",
-            "thursday",
-            "friday",
-            "saturday"});
-            this.cbDayOfWeek.Location = new System.Drawing.Point(1130, 128);
-            this.cbDayOfWeek.Name = "cbDayOfWeek";
-            this.cbDayOfWeek.Size = new System.Drawing.Size(207, 33);
-            this.cbDayOfWeek.TabIndex = 18;
-            // 
             // btBack
             // 
             this.btBack.Location = new System.Drawing.Point(12, 701);
@@ -244,6 +220,31 @@
             this.cbTime.Name = "cbTime";
             this.cbTime.Size = new System.Drawing.Size(267, 33);
             this.cbTime.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1168, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(141, 25);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "День недели";
+            // 
+            // cbDayOfWeek
+            // 
+            this.cbDayOfWeek.Enabled = false;
+            this.cbDayOfWeek.FormattingEnabled = true;
+            this.cbDayOfWeek.Items.AddRange(new object[] {
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"});
+            this.cbDayOfWeek.Location = new System.Drawing.Point(1130, 128);
+            this.cbDayOfWeek.Name = "cbDayOfWeek";
+            this.cbDayOfWeek.Size = new System.Drawing.Size(207, 33);
+            this.cbDayOfWeek.TabIndex = 18;
             // 
             // ScheduleEditForm
             // 
@@ -295,9 +296,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbSubject;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbDayOfWeek;
         private System.Windows.Forms.Button btBack;
         private System.Windows.Forms.ComboBox cbTime;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbDayOfWeek;
     }
 }

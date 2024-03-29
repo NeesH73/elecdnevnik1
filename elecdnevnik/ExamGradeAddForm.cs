@@ -90,7 +90,7 @@ namespace elecdnevnik
                         }
                         else
                         {
-                            cbExamType.Items.Clear();
+                            cbExamType.Text.DefaultIfEmpty();
                         }
                         if (dateSave.Checked)
                         {
@@ -156,7 +156,7 @@ namespace elecdnevnik
 
 
                 dbconnect db = new dbconnect();
-                MySqlCommand cmd = new MySqlCommand("UPDATE `exam` SET `login` = @login, `subject` = @sub, `groupNumb` = @grpNumb, `fullName` = @name, `examType` = @ex, `grade` = @gr WHERE `ID` = @id", db.GetConnection());
+                MySqlCommand cmd = new MySqlCommand("UPDATE `exam` SET `login` = @login, `subject` = @sub, `groupNumb` = @grpNumb, `fullName` = @name, `examType` = @ex, `grade` = @gr, `date` = @d WHERE `ID` = @id", db.GetConnection());
                 try
                 {
                     cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
@@ -171,12 +171,14 @@ namespace elecdnevnik
                     db.OpenConnection();
                     if (cmd.ExecuteNonQuery() == 1)
                     {
+                        refreshGW();
                         MessageBox.Show("Данные обновлены");
                         
                     }
                     else
                     {
-                        MessageBox.Show("Произошла ошибка, данные не были обновлены");
+                        refreshGW();
+                        MessageBox.Show("Вы не можете редактировать id");
                     }
                     db.CloseConnection();
                 }

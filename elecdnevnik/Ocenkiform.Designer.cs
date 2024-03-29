@@ -35,19 +35,25 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(78, 79);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(365, 245);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.Size = new System.Drawing.Size(730, 471);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnvern
             // 
-            this.btnvern.Location = new System.Drawing.Point(304, 12);
+            this.btnvern.Location = new System.Drawing.Point(608, 23);
+            this.btnvern.Margin = new System.Windows.Forms.Padding(6);
             this.btnvern.Name = "btnvern";
-            this.btnvern.Size = new System.Drawing.Size(118, 23);
+            this.btnvern.Size = new System.Drawing.Size(236, 44);
             this.btnvern.TabIndex = 1;
             this.btnvern.Text = "Вернуться назад";
             this.btnvern.UseVisualStyleBackColor = true;
@@ -55,11 +61,12 @@
             // 
             // Ocenkiform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 313);
+            this.ClientSize = new System.Drawing.Size(886, 602);
             this.Controls.Add(this.btnvern);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Ocenkiform";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Ocenkiform_Load);

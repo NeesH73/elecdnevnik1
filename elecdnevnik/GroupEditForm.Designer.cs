@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btBack = new System.Windows.Forms.Button();
             this.StudentGW = new System.Windows.Forms.DataGridView();
             this.btAdd = new System.Windows.Forms.Button();
@@ -40,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbFullName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btDelete = new System.Windows.Forms.Button();
             this.btUpd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StudentGW)).BeginInit();
@@ -140,11 +138,6 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "ФИО";
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // btDelete
             // 
             this.btDelete.Location = new System.Drawing.Point(1263, 771);
@@ -204,7 +197,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbFullName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btUpd;
     }

@@ -97,10 +97,11 @@
             // 
             // textboxfio
             // 
-            this.textboxfio.Location = new System.Drawing.Point(302, 385);
+            this.textboxfio.Location = new System.Drawing.Point(260, 385);
             this.textboxfio.Margin = new System.Windows.Forms.Padding(6);
             this.textboxfio.Name = "textboxfio";
-            this.textboxfio.Size = new System.Drawing.Size(196, 31);
+            this.textboxfio.ReadOnly = true;
+            this.textboxfio.Size = new System.Drawing.Size(288, 31);
             this.textboxfio.TabIndex = 5;
             // 
             // textboxgrup
@@ -108,6 +109,7 @@
             this.textboxgrup.Location = new System.Drawing.Point(302, 481);
             this.textboxgrup.Margin = new System.Windows.Forms.Padding(6);
             this.textboxgrup.Name = "textboxgrup";
+            this.textboxgrup.ReadOnly = true;
             this.textboxgrup.Size = new System.Drawing.Size(196, 31);
             this.textboxgrup.TabIndex = 6;
             // 

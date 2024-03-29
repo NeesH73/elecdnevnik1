@@ -81,7 +81,7 @@
     <Compile Include="AdminMenuForm.Designer.cs">
       <DependentUpon>AdminMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="GridView.cs" />
     <Compile Include="dbconnect.cs" />
     <Compile Include="ExamGradeAddForm.cs">
       <SubType>Form</SubType>

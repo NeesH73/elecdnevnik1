@@ -254,7 +254,7 @@ namespace elecdnevnik
                 }
                 else
                 {
-                    MessageBox.Show("Произошла ошибка, данные не были обновлены");
+                    MessageBox.Show("Вы не можете редактировать id");
                 }
                 db.CloseConnection();
             }
