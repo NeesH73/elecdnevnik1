@@ -145,14 +145,14 @@ namespace elecdnevnik
             {
                 DataGridViewRow row = examGradeGW.SelectedRows[0];
 
-                string id = row.Cells["id"].Value.ToString();
-                string groupNumb = row.Cells["groupNumb"].Value.ToString();
-                string login = row.Cells["login"].Value.ToString();
-                string fullName = row.Cells["fullName"].Value.ToString();
-                string subject = row.Cells["subject"].Value.ToString();
-                string extype = row.Cells["examType"].Value.ToString();
-                string date = row.Cells["date"].Value.ToString();
-                string grade = row.Cells["grade"].Value.ToString();
+                string id = row.Cells["id"].Value?.ToString() ?? string.Empty;
+                string groupNumb = row.Cells["groupNumb"].Value?.ToString() ?? string.Empty;
+                string login = row.Cells["login"].Value?.ToString() ?? string.Empty;
+                string fullName = row.Cells["fullName"].Value?.ToString() ?? string.Empty;
+                string subject = row.Cells["subject"].Value?.ToString() ?? string.Empty;
+                string extype = row.Cells["examType"].Value?.ToString() ?? string.Empty;
+                string date = row.Cells["date"].Value?.ToString() ?? string.Empty;
+                string grade = row.Cells["grade"].Value?.ToString() ?? string.Empty;
 
 
                 dbconnect db = new dbconnect();
@@ -186,6 +186,10 @@ namespace elecdnevnik
                 {
                     MessageBox.Show("ID должен быть уникальным!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                catch (System.FormatException)
+                {
+                    MessageBox.Show("Выберите другую строку");
+                }
                 
             }
             else
@@ -202,7 +206,7 @@ namespace elecdnevnik
                 {
                     foreach (DataGridViewRow row in examGradeGW.SelectedRows)
                     {
-                        string id = row.Cells["id"].Value.ToString();
+                        string id = row.Cells["id"].Value?.ToString() ?? string.Empty;
 
 
                         dbconnect db = new dbconnect();
@@ -216,7 +220,7 @@ namespace elecdnevnik
                         }
                         else
                         {
-                            MessageBox.Show("Ошибка при удалении записи");
+                            MessageBox.Show("Выберите другую строку");
                         }
                         db.CloseConnection();
                     }

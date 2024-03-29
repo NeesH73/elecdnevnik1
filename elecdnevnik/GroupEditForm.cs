@@ -90,7 +90,7 @@ namespace elecdnevnik
                 {
                     foreach (DataGridViewRow row in StudentGW.SelectedRows)
                     {
-                        string id = row.Cells["id"].Value.ToString();
+                        string id = row.Cells["id"].Value?.ToString() ?? string.Empty;
 
 
                         dbconnect db = new dbconnect();
@@ -104,7 +104,7 @@ namespace elecdnevnik
                         }
                         else
                         {
-                            MessageBox.Show("Ошибка при удалении записи");
+                            MessageBox.Show("Вы не можете удалить пустую строку");
                         }
                         db.CloseConnection();
                     }
@@ -129,12 +129,11 @@ namespace elecdnevnik
                 try
                 {
                     DataGridViewRow row = StudentGW.SelectedRows[0];
-                    string id = row.Cells["id"].Value.ToString();
-
-                    string login = row.Cells["login"].Value.ToString();
-                    string pass = row.Cells["pass"].Value.ToString();
-                    string groupNumb = row.Cells["groupNumb"].Value.ToString();
-                    string fullName = row.Cells["fullName"].Value.ToString();
+                    string id = row.Cells["id"].Value?.ToString() ?? string.Empty;
+                    string login = row.Cells["login"].Value?.ToString() ?? string.Empty;
+                    string pass = row.Cells["pass"].Value?.ToString() ?? string.Empty;
+                    string groupNumb = row.Cells["groupNumb"].Value?.ToString() ?? string.Empty;
+                    string fullName = row.Cells["fullName"].Value?.ToString() ?? string.Empty;
 
 
 
@@ -154,7 +153,7 @@ namespace elecdnevnik
                     }
                     else
                     {
-                        MessageBox.Show("Вы не можете редактировать id");
+                        MessageBox.Show("Вы не можете изменить пустую строку или id");
                     }
                     db.CloseConnection();
                     refreshGW();

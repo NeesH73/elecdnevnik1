@@ -142,7 +142,7 @@ namespace elecdnevnik
                 {
                     foreach (DataGridViewRow row in scheduleGW.SelectedRows)
                     {
-                        string id = row.Cells["id"].Value.ToString();
+                        string id = row.Cells["id"].Value?.ToString() ?? string.Empty;
 
 
                         dbconnect db = new dbconnect();
@@ -156,7 +156,7 @@ namespace elecdnevnik
                         }
                         else
                         {
-                            MessageBox.Show("Ошибка при удалении записи");
+                            MessageBox.Show("Выберите другую строку");
                         }
                         db.CloseConnection();
                     }
@@ -205,13 +205,14 @@ namespace elecdnevnik
         {
             if (scheduleGW.SelectedRows.Count > 0)
             {
+                
                 DataGridViewRow row = scheduleGW.SelectedRows[0];
 
-                string id = row.Cells["id"].Value.ToString();
+                string id = row.Cells["id"].Value?.ToString() ?? string.Empty;
 
-                string grpnumb = row.Cells["groupNumb"].Value.ToString();
-                string time = row.Cells["time"].Value.ToString();
-                string subj = row.Cells["subject"].Value.ToString();
+                string grpnumb = row.Cells["groupNumb"].Value?.ToString() ?? string.Empty;
+                string time = row.Cells["time"].Value?.ToString() ?? string.Empty;
+                string subj = row.Cells["subject"].Value?.ToString() ?? string.Empty;
                 string selectedTable = "";
                 switch (cbDayOfWeek.SelectedIndex)
                 {
@@ -254,7 +255,7 @@ namespace elecdnevnik
                 }
                 else
                 {
-                    MessageBox.Show("Вы не можете редактировать id");
+                    MessageBox.Show("Вы не можете изменить пустую строку или id");
                 }
                 db.CloseConnection();
             }
