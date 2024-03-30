@@ -2,10 +2,10 @@
 -- version 5.1.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost:3306
--- Время создания: Мар 26 2024 г., 17:06
--- Версия сервера: 5.7.24
--- Версия PHP: 8.0.1
+-- Host: localhost:3306
+-- Generation Time: Mar 30, 2024 at 01:38 PM
+-- Server version: 5.7.24
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `elecdnev`
+-- Database: `elecdnev`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `login`, `pass`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `admin` (`id`, `login`, `pass`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `exam`
+-- Table structure for table `exam`
 --
 
 CREATE TABLE `exam` (
@@ -52,23 +52,23 @@ CREATE TABLE `exam` (
   `groupNumb` varchar(10) NOT NULL,
   `fullName` varchar(50) NOT NULL,
   `subject` varchar(50) NOT NULL,
-  `date` date DEFAULT NULL,
+  `date` varchar(50) NOT NULL,
   `examType` varchar(50) NOT NULL,
   `grade` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `exam`
+-- Dumping data for table `exam`
 --
 
 INSERT INTO `exam` (`id`, `login`, `groupNumb`, `fullName`, `subject`, `date`, `examType`, `grade`) VALUES
-(1, 'user', '09-322', 'ivan', 'matan', NULL, 'Экзамен', '100'),
-(2, 'user', '09-322', 'ivan', 'english', NULL, 'Зачет', 'Зачёт');
+(1, 'user', '09-322', 'ivan', 'english', '01.29.2024', 'Зачет', 'Зачёт'),
+(2, 'user', '09-322', 'ivan', 'matan', '01.25.2024', 'Зачет', 'Зачёт');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `friday`
+-- Table structure for table `friday`
 --
 
 CREATE TABLE `friday` (
@@ -79,7 +79,7 @@ CREATE TABLE `friday` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `friday`
+-- Dumping data for table `friday`
 --
 
 INSERT INTO `friday` (`id`, `groupNumb`, `time`, `subject`) VALUES
@@ -89,7 +89,7 @@ INSERT INTO `friday` (`id`, `groupNumb`, `time`, `subject`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `monday`
+-- Table structure for table `monday`
 --
 
 CREATE TABLE `monday` (
@@ -100,19 +100,18 @@ CREATE TABLE `monday` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `monday`
+-- Dumping data for table `monday`
 --
 
 INSERT INTO `monday` (`id`, `groupNumb`, `time`, `subject`) VALUES
 (1, '09-322', '10:10-11:40', 'Иностранный язык'),
-(2, '09-322', '10:10-11:40', 'Иностранный язык'),
 (3, '09-322', '12:10-13:40', 'Математический анализ'),
 (4, '09-322', '13:50-15:20', 'История России');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `saturday`
+-- Table structure for table `saturday`
 --
 
 CREATE TABLE `saturday` (
@@ -123,7 +122,7 @@ CREATE TABLE `saturday` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `saturday`
+-- Dumping data for table `saturday`
 --
 
 INSERT INTO `saturday` (`id`, `groupNumb`, `time`, `subject`) VALUES
@@ -133,7 +132,7 @@ INSERT INTO `saturday` (`id`, `groupNumb`, `time`, `subject`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `thursday`
+-- Table structure for table `thursday`
 --
 
 CREATE TABLE `thursday` (
@@ -144,7 +143,7 @@ CREATE TABLE `thursday` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `thursday`
+-- Dumping data for table `thursday`
 --
 
 INSERT INTO `thursday` (`id`, `groupNumb`, `time`, `subject`) VALUES
@@ -155,7 +154,7 @@ INSERT INTO `thursday` (`id`, `groupNumb`, `time`, `subject`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `tuesday`
+-- Table structure for table `tuesday`
 --
 
 CREATE TABLE `tuesday` (
@@ -166,7 +165,7 @@ CREATE TABLE `tuesday` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `tuesday`
+-- Dumping data for table `tuesday`
 --
 
 INSERT INTO `tuesday` (`id`, `groupNumb`, `time`, `subject`) VALUES
@@ -177,7 +176,7 @@ INSERT INTO `tuesday` (`id`, `groupNumb`, `time`, `subject`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -189,17 +188,17 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `login`, `pass`, `groupNumb`, `fullName`) VALUES
-(1, 'user', '123', '09-322', 'ivanov ivan ivanovich'),
-(3, 'user1', '123', '09-322', 'Petrov Petr Petrovich');
+(1, 'user', '123', '09-322', 'Petrov Petr Petrovich'),
+(3, 'user1', '123', '09-322', 'ivanov ivan ivanovich');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `wednesday`
+-- Table structure for table `wednesday`
 --
 
 CREATE TABLE `wednesday` (
@@ -210,127 +209,127 @@ CREATE TABLE `wednesday` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `wednesday`
+-- Dumping data for table `wednesday`
 --
 
 INSERT INTO `wednesday` (`id`, `groupNumb`, `time`, `subject`) VALUES
 (1, '09-322', '10:10-11:40', 'Противодействия коррупции'),
-(2, '09-322', '12:10-13:40', 'Противодействия коррупции'),
+(2, '09-322', '15:50-17:20', 'Математический анализ'),
 (3, '09-322', '15:50-17:20', 'Математический анализ');
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- Индексы таблицы `exam`
+-- Indexes for table `exam`
 --
 ALTER TABLE `exam`
-  ADD PRIMARY KEY (`id`);
+  ADD UNIQUE KEY `id` (`id`) USING BTREE;
 
 --
--- Индексы таблицы `friday`
+-- Indexes for table `friday`
 --
 ALTER TABLE `friday`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- Индексы таблицы `monday`
+-- Indexes for table `monday`
 --
 ALTER TABLE `monday`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- Индексы таблицы `saturday`
+-- Indexes for table `saturday`
 --
 ALTER TABLE `saturday`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `thursday`
+-- Indexes for table `thursday`
 --
 ALTER TABLE `thursday`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- Индексы таблицы `tuesday`
+-- Indexes for table `tuesday`
 --
 ALTER TABLE `tuesday`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- Индексы таблицы `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `login` (`login`);
+  ADD UNIQUE KEY `login` (`login`),
+  ADD UNIQUE KEY `id` (`id`) USING BTREE;
 
 --
--- Индексы таблицы `wednesday`
+-- Indexes for table `wednesday`
 --
 ALTER TABLE `wednesday`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `exam`
+-- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `friday`
+-- AUTO_INCREMENT for table `friday`
 --
 ALTER TABLE `friday`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `monday`
+-- AUTO_INCREMENT for table `monday`
 --
 ALTER TABLE `monday`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `saturday`
+-- AUTO_INCREMENT for table `saturday`
 --
 ALTER TABLE `saturday`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `thursday`
+-- AUTO_INCREMENT for table `thursday`
 --
 ALTER TABLE `thursday`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `tuesday`
+-- AUTO_INCREMENT for table `tuesday`
 --
 ALTER TABLE `tuesday`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `wednesday`
+-- AUTO_INCREMENT for table `wednesday`
 --
 ALTER TABLE `wednesday`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
