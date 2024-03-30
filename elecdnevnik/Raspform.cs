@@ -24,42 +24,42 @@ namespace elecdnevnik
         
         private void btnmon_Click(object sender, EventArgs e)
         {
-            string quary = "SELECT * FROM monday";
+            var quary = "SELECT * FROM monday";
             db.MySqlReturnData(quary, dataGridView1);
         }
 
         private void btnvtor_Click(object sender, EventArgs e)
         {
-           
-            string quary = "SELECT * FROM tuesday";
+
+            var quary = "SELECT * FROM tuesday";
             db.MySqlReturnData(quary, dataGridView1);
         }
 
         private void btnsr_Click(object sender, EventArgs e)
         {
-            
-            string quary = "SELECT * FROM wednesday";
+
+            var quary = "SELECT * FROM wednesday";
             db.MySqlReturnData(quary, dataGridView1);
         }
 
         private void btnchet_Click(object sender, EventArgs e)
         {
-           
-            string quary = "SELECT * FROM thursday";
+
+            var quary = "SELECT * FROM thursday";
             db.MySqlReturnData(quary, dataGridView1);
         }
 
         private void btnpyat_Click(object sender, EventArgs e)
         {
-            
-            string quary = "SELECT * FROM friday";
+
+            var quary = "SELECT * FROM friday";
             db.MySqlReturnData(quary, dataGridView1);
         }
 
         private void btnsyb_Click(object sender, EventArgs e)
         {
-            
-            string quary = "SELECT * FROM saturday";
+
+            var quary = "SELECT * FROM saturday";
             db.MySqlReturnData(quary, dataGridView1);
         }
 
@@ -70,9 +70,6 @@ namespace elecdnevnik
             this.Hide();
         }
 
-        private void tbGrpNumb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

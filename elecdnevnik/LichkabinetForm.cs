@@ -17,7 +17,7 @@ namespace elecdnevnik
         {
             InitializeComponent();
             dbconnect db = new dbconnect();
-            string quary = $"SELECT fullName,groupNumb FROM user WHERE login='{LoginForm.UserLogin.loginuser}'";
+            var quary = $"SELECT fullName,groupNumb FROM user WHERE login='{LoginForm.UserLogin.loginuser}'";
             MySqlCommand cm = new MySqlCommand(quary, db.GetConnection());
 
 

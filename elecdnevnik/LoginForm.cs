@@ -28,9 +28,7 @@ namespace elecdnevnik
             
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;Connect Timeout=30");
-
-
+        
         private void btExit_Click(object sender, EventArgs e)
         {
             DialogResult res;

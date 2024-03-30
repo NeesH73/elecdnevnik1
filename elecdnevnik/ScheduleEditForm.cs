@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace elecdnevnik
 {
@@ -58,57 +51,65 @@ namespace elecdnevnik
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            string selectedTable = "";
-            switch (cbDayOfWeek.SelectedIndex)
+            if (tbGroupNumb.Text == "" || tbSubject.Text == "" || cbDayOfWeek.Text == "" || cbTime.Text == "")
             {
-                case 0:
-                    selectedTable = "monday";
-                    break;
-                case 1:
-                    selectedTable = "tuesday";
-                    break;
-                case 2:
-                    selectedTable = "wednesday";
-                    break;
-                case 3:
-                    selectedTable = "thursday";
-                    break;
-                case 4:
-                    selectedTable = "friday";
-                    break;
-                case 5:
-                    selectedTable = "saturday";
-                    break;
-                default:
-                    MessageBox.Show("Выберите день недели.");
-                    return;
-            }
-            
-            dbconnect db = new dbconnect();
-            MySqlCommand cmd = new MySqlCommand($"INSERT INTO {selectedTable} (`groupNumb`, `time`, `subject`) VALUES(@gn, @t, @s)", db.GetConnection());
-
-            cmd.Parameters.Add("@t", MySqlDbType.VarChar).Value = cbTime.Text;
-            cmd.Parameters.Add("@gn", MySqlDbType.VarChar).Value = tbGroupNumb.Text;
-            cmd.Parameters.Add("@s", MySqlDbType.VarChar).Value = tbSubject.Text;
-            db.OpenConnection();
-            if (cmd.ExecuteNonQuery() == 1)
-            {
-                
-                MessageBox.Show("Успешное добавление");
-                tbGroupNumb.Clear();
-                cbTime.Items.Clear();
-                tbSubject.Clear();
-
+                MessageBox.Show("Вы ввели не все данные.");
             }
             else
             {
-                MessageBox.Show("Произошла ошибка");
+                string selectedTable = "";
+                switch (cbDayOfWeek.SelectedIndex)
+                {
+                    case 0:
+                        selectedTable = "monday";
+                        break;
+                    case 1:
+                        selectedTable = "tuesday";
+                        break;
+                    case 2:
+                        selectedTable = "wednesday";
+                        break;
+                    case 3:
+                        selectedTable = "thursday";
+                        break;
+                    case 4:
+                        selectedTable = "friday";
+                        break;
+                    case 5:
+                        selectedTable = "saturday";
+                        break;
+                    default:
+                        MessageBox.Show("Выберите день недели.");
+                        return;
+                }
+
+                dbconnect db = new dbconnect();
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO {selectedTable} (`groupNumb`, `time`, `subject`) VALUES(@gn, @t, @s)", db.GetConnection());
+
+                cmd.Parameters.Add("@t", MySqlDbType.VarChar).Value = cbTime.Text;
+                cmd.Parameters.Add("@gn", MySqlDbType.VarChar).Value = tbGroupNumb.Text;
+                cmd.Parameters.Add("@s", MySqlDbType.VarChar).Value = tbSubject.Text;
+                db.OpenConnection();
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+
+                    MessageBox.Show("Успешное добавление");
+                    tbGroupNumb.Clear();
+                    cbTime.Items.Clear();
+                    tbSubject.Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("Произошла ошибка");
+                }
+
+                db.CloseConnection();
             }
 
-            db.CloseConnection();
-            
+
         }
-       
+
         private void btDelete_Click(object sender, EventArgs e)
         {
             string selectedTable = "";
@@ -162,7 +163,7 @@ namespace elecdnevnik
                     }
 
 
-                  
+
                 }
             }
             else
@@ -205,15 +206,14 @@ namespace elecdnevnik
         {
             if (scheduleGW.SelectedRows.Count > 0)
             {
-                
+
                 DataGridViewRow row = scheduleGW.SelectedRows[0];
 
-                string id = row.Cells["id"].Value?.ToString() ?? string.Empty;
-
-                string grpnumb = row.Cells["groupNumb"].Value?.ToString() ?? string.Empty;
-                string time = row.Cells["time"].Value?.ToString() ?? string.Empty;
-                string subj = row.Cells["subject"].Value?.ToString() ?? string.Empty;
-                string selectedTable = "";
+                var id = row.Cells["id"].Value?.ToString() ?? string.Empty;
+                var grpnumb = row.Cells["groupNumb"].Value?.ToString() ?? string.Empty;
+                var time = row.Cells["time"].Value?.ToString() ?? string.Empty;
+                var subj = row.Cells["subject"].Value?.ToString() ?? string.Empty;
+                var selectedTable = "";
                 switch (cbDayOfWeek.SelectedIndex)
                 {
                     case 0:
@@ -240,24 +240,46 @@ namespace elecdnevnik
                 }
 
                 dbconnect db = new dbconnect();
-                MySqlCommand cmd = new MySqlCommand($"UPDATE {selectedTable} SET `time` = @t, `subject` = @s, `groupNumb` = @gn WHERE `ID` = @id", db.GetConnection());
+                MySqlCommand cmd = new MySqlCommand($"UPDATE {selectedTable} SET `time` = @t, `subject` = @s, `groupNumb` = @gn WHERE `id` = @id", db.GetConnection());
 
                 cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
                 cmd.Parameters.Add("@t", MySqlDbType.VarChar).Value = time;
                 cmd.Parameters.Add("@s", MySqlDbType.VarChar).Value = subj;
                 cmd.Parameters.Add("@gn", MySqlDbType.VarChar).Value = grpnumb;
-                
+
 
                 db.OpenConnection();
-                if (cmd.ExecuteNonQuery() == 1)
+
+                try
                 {
-                    MessageBox.Show("Данные обновлены");
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Данные обновлены");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Вы не можете изменить пустую строку или id");
+                    }
+                    db.CloseConnection();
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Данные обновлены");
+                    }
+                    else
+                    {
+                        
+                    }
+                    db.CloseConnection();
                 }
-                else
+                catch (MySql.Data.MySqlClient.MySqlException)
                 {
-                    MessageBox.Show("Вы не можете изменить пустую строку или id");
+                    
                 }
-                db.CloseConnection();
+                catch (System.InvalidOperationException)
+                {
+                    
+                }
+
             }
             else
             {

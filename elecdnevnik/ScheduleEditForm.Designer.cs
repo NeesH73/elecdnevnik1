@@ -52,12 +52,13 @@
             // 
             // scheduleGW
             // 
+            this.scheduleGW.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.scheduleGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.scheduleGW.Location = new System.Drawing.Point(4, 91);
             this.scheduleGW.Name = "scheduleGW";
             this.scheduleGW.RowHeadersWidth = 82;
             this.scheduleGW.RowTemplate.Height = 33;
-            this.scheduleGW.Size = new System.Drawing.Size(1062, 418);
+            this.scheduleGW.Size = new System.Drawing.Size(980, 418);
             this.scheduleGW.TabIndex = 0;
             // 
             // btMonday

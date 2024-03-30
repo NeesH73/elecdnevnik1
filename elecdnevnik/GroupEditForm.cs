@@ -12,7 +12,7 @@ namespace elecdnevnik
         {
             InitializeComponent();
             db = new GridView();
-            string quary = "SELECT * FROM user";
+            var quary = "SELECT * FROM user";
             db.MySqlReturnData(quary, StudentGW);
 
         }
@@ -28,7 +28,7 @@ namespace elecdnevnik
         public void refreshGW()
         {
             dbconnect db = new dbconnect();
-            string sql = "select * from user";
+            var sql = "select * from user";
             MySqlDataAdapter sda = new MySqlDataAdapter(sql, db.GetConnection());
             DataSet ds = new System.Data.DataSet();
             sda.Fill(ds, "user");

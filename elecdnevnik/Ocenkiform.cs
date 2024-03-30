@@ -24,7 +24,7 @@ namespace elecdnevnik
 
         private void Ocenkiform_Load(object sender, EventArgs e)
         {
-            string quary = $"SELECT subject,examType,grade,date FROM exam WHERE login='{LoginForm.UserLogin.loginuser}' ";
+            var quary = $"SELECT subject,examType,grade,date FROM exam WHERE login='{LoginForm.UserLogin.loginuser}' ";
             db.MySqlReturnData(quary, dataGridView1);
         }
 

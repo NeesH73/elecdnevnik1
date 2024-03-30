@@ -67,12 +67,14 @@
             // 
             // examGradeGW
             // 
+            this.examGradeGW.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.examGradeGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.examGradeGW.GridColor = System.Drawing.SystemColors.Control;
             this.examGradeGW.Location = new System.Drawing.Point(26, 34);
             this.examGradeGW.Name = "examGradeGW";
             this.examGradeGW.RowHeadersWidth = 82;
             this.examGradeGW.RowTemplate.Height = 33;
-            this.examGradeGW.Size = new System.Drawing.Size(1491, 493);
+            this.examGradeGW.Size = new System.Drawing.Size(1754, 493);
             this.examGradeGW.TabIndex = 0;
             // 
             // button1
@@ -188,7 +190,7 @@
             // 
             // btReturn
             // 
-            this.btReturn.Location = new System.Drawing.Point(1375, 720);
+            this.btReturn.Location = new System.Drawing.Point(1617, 720);
             this.btReturn.Name = "btReturn";
             this.btReturn.Size = new System.Drawing.Size(163, 47);
             this.btReturn.TabIndex = 14;
@@ -215,11 +217,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(961, 564);
+            this.label8.Location = new System.Drawing.Point(953, 564);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 25);
+            this.label8.Size = new System.Drawing.Size(142, 25);
             this.label8.TabIndex = 17;
-            this.label8.Text = "ДД.ММ.ГГ";
+            this.label8.Text = "ГГГГ-ММ-ДД";
             // 
             // loginSave
             // 
@@ -349,7 +351,7 @@
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(1378, 549);
+            this.btDelete.Location = new System.Drawing.Point(1641, 533);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(139, 41);
             this.btDelete.TabIndex = 32;
@@ -359,7 +361,7 @@
             // 
             // btUpd
             // 
-            this.btUpd.Location = new System.Drawing.Point(1138, 548);
+            this.btUpd.Location = new System.Drawing.Point(1339, 539);
             this.btUpd.Name = "btUpd";
             this.btUpd.Size = new System.Drawing.Size(184, 41);
             this.btUpd.TabIndex = 33;
@@ -371,7 +373,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1550, 779);
+            this.ClientSize = new System.Drawing.Size(1802, 779);
             this.Controls.Add(this.btUpd);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.label15);
@@ -408,6 +410,7 @@
             this.Controls.Add(this.examGradeGW);
             this.Name = "ExamGradeAddForm";
             this.Text = "ExamGradeAddForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.examGradeGW)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
