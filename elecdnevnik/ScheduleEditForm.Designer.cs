@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleEditForm));
             this.scheduleGW = new System.Windows.Forms.DataGridView();
             this.btMonday = new System.Windows.Forms.Button();
             this.btTuesday = new System.Windows.Forms.Button();
@@ -63,98 +64,116 @@
             // 
             // btMonday
             // 
+            this.btMonday.BackColor = System.Drawing.Color.Snow;
+            this.btMonday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btMonday.Location = new System.Drawing.Point(4, 13);
             this.btMonday.Name = "btMonday";
             this.btMonday.Size = new System.Drawing.Size(164, 48);
             this.btMonday.TabIndex = 1;
             this.btMonday.Text = "Понедельник";
-            this.btMonday.UseVisualStyleBackColor = true;
+            this.btMonday.UseVisualStyleBackColor = false;
             this.btMonday.Click += new System.EventHandler(this.btMonday_Click);
             this.btMonday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btMonday_MouseDown);
             // 
             // btTuesday
             // 
+            this.btTuesday.BackColor = System.Drawing.Color.Snow;
+            this.btTuesday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btTuesday.Location = new System.Drawing.Point(174, 12);
             this.btTuesday.Name = "btTuesday";
             this.btTuesday.Size = new System.Drawing.Size(164, 48);
             this.btTuesday.TabIndex = 2;
             this.btTuesday.Text = "Вторник";
-            this.btTuesday.UseVisualStyleBackColor = true;
+            this.btTuesday.UseVisualStyleBackColor = false;
             this.btTuesday.Click += new System.EventHandler(this.btTuesday_Click);
             this.btTuesday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btTuesday_MouseDown);
             // 
             // btWednesday
             // 
+            this.btWednesday.BackColor = System.Drawing.Color.Snow;
+            this.btWednesday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btWednesday.Location = new System.Drawing.Point(344, 13);
             this.btWednesday.Name = "btWednesday";
             this.btWednesday.Size = new System.Drawing.Size(164, 48);
             this.btWednesday.TabIndex = 3;
             this.btWednesday.Text = "Среда";
-            this.btWednesday.UseVisualStyleBackColor = true;
+            this.btWednesday.UseVisualStyleBackColor = false;
             this.btWednesday.Click += new System.EventHandler(this.btWednesday_Click);
             this.btWednesday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btWednesday_MouseDown);
             // 
             // btThursday
             // 
+            this.btThursday.BackColor = System.Drawing.Color.Snow;
+            this.btThursday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btThursday.Location = new System.Drawing.Point(514, 13);
             this.btThursday.Name = "btThursday";
             this.btThursday.Size = new System.Drawing.Size(164, 48);
             this.btThursday.TabIndex = 4;
             this.btThursday.Text = "Четверг";
-            this.btThursday.UseVisualStyleBackColor = true;
+            this.btThursday.UseVisualStyleBackColor = false;
             this.btThursday.Click += new System.EventHandler(this.btThursday_Click);
             this.btThursday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btThursday_MouseDown);
             // 
             // btFriday
             // 
+            this.btFriday.BackColor = System.Drawing.Color.Snow;
+            this.btFriday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btFriday.Location = new System.Drawing.Point(684, 12);
             this.btFriday.Name = "btFriday";
             this.btFriday.Size = new System.Drawing.Size(164, 48);
             this.btFriday.TabIndex = 5;
             this.btFriday.Text = "Пятница";
-            this.btFriday.UseVisualStyleBackColor = true;
+            this.btFriday.UseVisualStyleBackColor = false;
             this.btFriday.Click += new System.EventHandler(this.btFriday_Click);
             this.btFriday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btFriday_MouseDown);
             // 
             // btSaturday
             // 
+            this.btSaturday.BackColor = System.Drawing.Color.Snow;
+            this.btSaturday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSaturday.Location = new System.Drawing.Point(854, 12);
             this.btSaturday.Name = "btSaturday";
             this.btSaturday.Size = new System.Drawing.Size(164, 48);
             this.btSaturday.TabIndex = 6;
             this.btSaturday.Text = "Суббота";
-            this.btSaturday.UseVisualStyleBackColor = true;
+            this.btSaturday.UseVisualStyleBackColor = false;
             this.btSaturday.Click += new System.EventHandler(this.btSaturday_Click);
             this.btSaturday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btSaturday_MouseDown);
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(1143, 465);
+            this.btAdd.BackColor = System.Drawing.Color.Lime;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Location = new System.Drawing.Point(1216, 456);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(157, 53);
             this.btAdd.TabIndex = 7;
             this.btAdd.Text = "Добавить";
-            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.UseVisualStyleBackColor = false;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btEdit
             // 
+            this.btEdit.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEdit.Location = new System.Drawing.Point(4, 538);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(201, 53);
             this.btEdit.TabIndex = 8;
             this.btEdit.Text = "Редактировать";
-            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.UseVisualStyleBackColor = false;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btDelete
             // 
+            this.btDelete.BackColor = System.Drawing.Color.OrangeRed;
+            this.btDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDelete.Location = new System.Drawing.Point(1216, 692);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(157, 53);
             this.btDelete.TabIndex = 9;
             this.btDelete.Text = "Удалить";
-            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.UseVisualStyleBackColor = false;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // label1
@@ -200,12 +219,14 @@
             // 
             // btBack
             // 
+            this.btBack.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btBack.Location = new System.Drawing.Point(12, 701);
             this.btBack.Name = "btBack";
             this.btBack.Size = new System.Drawing.Size(141, 53);
             this.btBack.TabIndex = 19;
             this.btBack.Text = "Назад";
-            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.UseVisualStyleBackColor = false;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
             // cbTime
@@ -251,6 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1385, 757);
             this.Controls.Add(this.cbTime);
             this.Controls.Add(this.btBack);
@@ -271,9 +293,10 @@
             this.Controls.Add(this.btTuesday);
             this.Controls.Add(this.btMonday);
             this.Controls.Add(this.scheduleGW);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ScheduleEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ScheduleEditForm";
+            this.Text = " Редактирование расписания";
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGW)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

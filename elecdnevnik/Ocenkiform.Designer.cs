@@ -50,19 +50,22 @@
             // 
             // btnvern
             // 
+            this.btnvern.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnvern.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnvern.Location = new System.Drawing.Point(608, 23);
             this.btnvern.Margin = new System.Windows.Forms.Padding(6);
             this.btnvern.Name = "btnvern";
             this.btnvern.Size = new System.Drawing.Size(236, 44);
             this.btnvern.TabIndex = 1;
             this.btnvern.Text = "Вернуться назад";
-            this.btnvern.UseVisualStyleBackColor = true;
+            this.btnvern.UseVisualStyleBackColor = false;
             this.btnvern.Click += new System.EventHandler(this.btnvern_Click_1);
             // 
             // Ocenkiform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(886, 602);
             this.Controls.Add(this.btnvern);
             this.Controls.Add(this.dataGridView1);

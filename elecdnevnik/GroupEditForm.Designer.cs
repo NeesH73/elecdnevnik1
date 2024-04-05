@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupEditForm));
             this.btBack = new System.Windows.Forms.Button();
             this.StudentGW = new System.Windows.Forms.DataGridView();
             this.btAdd = new System.Windows.Forms.Button();
@@ -46,12 +47,14 @@
             // 
             // btBack
             // 
+            this.btBack.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btBack.Location = new System.Drawing.Point(12, 771);
             this.btBack.Name = "btBack";
             this.btBack.Size = new System.Drawing.Size(135, 65);
             this.btBack.TabIndex = 0;
             this.btBack.Text = "Назад";
-            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.UseVisualStyleBackColor = false;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
             // StudentGW
@@ -67,12 +70,14 @@
             // 
             // btAdd
             // 
+            this.btAdd.BackColor = System.Drawing.Color.Lime;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAdd.Location = new System.Drawing.Point(650, 559);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(134, 72);
             this.btAdd.TabIndex = 2;
             this.btAdd.Text = "Добавить";
-            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.UseVisualStyleBackColor = false;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // label1
@@ -141,28 +146,33 @@
             // 
             // btDelete
             // 
+            this.btDelete.BackColor = System.Drawing.Color.OrangeRed;
+            this.btDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDelete.Location = new System.Drawing.Point(1048, 767);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(132, 72);
             this.btDelete.TabIndex = 11;
             this.btDelete.Text = "Удалить";
-            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.UseVisualStyleBackColor = false;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btUpd
             // 
-            this.btUpd.Location = new System.Drawing.Point(790, 558);
+            this.btUpd.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btUpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUpd.Location = new System.Drawing.Point(992, 559);
             this.btUpd.Name = "btUpd";
-            this.btUpd.Size = new System.Drawing.Size(138, 73);
+            this.btUpd.Size = new System.Drawing.Size(188, 73);
             this.btUpd.TabIndex = 12;
             this.btUpd.Text = "Редактировать";
-            this.btUpd.UseVisualStyleBackColor = true;
+            this.btUpd.UseVisualStyleBackColor = false;
             this.btUpd.Click += new System.EventHandler(this.btUpd_Click);
             // 
             // GroupEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1186, 848);
             this.Controls.Add(this.btUpd);
             this.Controls.Add(this.btDelete);
@@ -177,8 +187,9 @@
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.StudentGW);
             this.Controls.Add(this.btBack);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GroupEditForm";
-            this.Text = "GroupEditForm";
+            this.Text = "Редактирование групп";
             ((System.ComponentModel.ISupportInitialize)(this.StudentGW)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

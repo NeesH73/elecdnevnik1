@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamGradeAddForm));
             this.examGradeGW = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.tbLogin = new System.Windows.Forms.TextBox();
@@ -79,12 +80,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(946, 656);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 55);
             this.button1.TabIndex = 1;
             this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btAdd);
             // 
             // tbLogin
@@ -190,12 +193,14 @@
             // 
             // btReturn
             // 
+            this.btReturn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btReturn.Location = new System.Drawing.Point(1617, 720);
             this.btReturn.Name = "btReturn";
             this.btReturn.Size = new System.Drawing.Size(163, 47);
             this.btReturn.TabIndex = 14;
             this.btReturn.Text = "Назад";
-            this.btReturn.UseVisualStyleBackColor = true;
+            this.btReturn.UseVisualStyleBackColor = false;
             this.btReturn.Click += new System.EventHandler(this.btReturn_Click);
             // 
             // label7
@@ -351,28 +356,33 @@
             // 
             // btDelete
             // 
+            this.btDelete.BackColor = System.Drawing.Color.OrangeRed;
+            this.btDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDelete.Location = new System.Drawing.Point(1641, 533);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(139, 41);
             this.btDelete.TabIndex = 32;
             this.btDelete.Text = "Удалить";
-            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.UseVisualStyleBackColor = false;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btUpd
             // 
-            this.btUpd.Location = new System.Drawing.Point(1339, 539);
+            this.btUpd.BackColor = System.Drawing.Color.Lime;
+            this.btUpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUpd.Location = new System.Drawing.Point(1339, 533);
             this.btUpd.Name = "btUpd";
             this.btUpd.Size = new System.Drawing.Size(184, 41);
             this.btUpd.TabIndex = 33;
             this.btUpd.Text = "Редактировать";
-            this.btUpd.UseVisualStyleBackColor = true;
+            this.btUpd.UseVisualStyleBackColor = false;
             this.btUpd.Click += new System.EventHandler(this.btUpd_Click);
             // 
             // ExamGradeAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1802, 779);
             this.Controls.Add(this.btUpd);
             this.Controls.Add(this.btDelete);
@@ -408,8 +418,9 @@
             this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.examGradeGW);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExamGradeAddForm";
-            this.Text = "ExamGradeAddForm";
+            this.Text = "Проставление оценок";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.examGradeGW)).EndInit();
             this.ResumeLayout(false);

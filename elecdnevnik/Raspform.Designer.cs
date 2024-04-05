@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raspform));
             this.btnmon = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnvtor = new System.Windows.Forms.Button();
@@ -41,13 +42,15 @@
             // 
             // btnmon
             // 
+            this.btnmon.BackColor = System.Drawing.Color.Snow;
+            this.btnmon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmon.Location = new System.Drawing.Point(14, 13);
-            this.btnmon.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnmon.Margin = new System.Windows.Forms.Padding(6);
             this.btnmon.Name = "btnmon";
             this.btnmon.Size = new System.Drawing.Size(250, 65);
             this.btnmon.TabIndex = 0;
             this.btnmon.Text = "Понедельник";
-            this.btnmon.UseVisualStyleBackColor = true;
+            this.btnmon.UseVisualStyleBackColor = false;
             this.btnmon.Click += new System.EventHandler(this.btnmon_Click);
             // 
             // dataGridView1
@@ -58,7 +61,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeight = 46;
             this.dataGridView1.Location = new System.Drawing.Point(94, 90);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
@@ -67,74 +70,87 @@
             // 
             // btnvtor
             // 
+            this.btnvtor.BackColor = System.Drawing.Color.Snow;
+            this.btnvtor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnvtor.Location = new System.Drawing.Point(276, 13);
-            this.btnvtor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnvtor.Margin = new System.Windows.Forms.Padding(6);
             this.btnvtor.Name = "btnvtor";
             this.btnvtor.Size = new System.Drawing.Size(250, 65);
             this.btnvtor.TabIndex = 2;
             this.btnvtor.Text = "Вторник";
-            this.btnvtor.UseVisualStyleBackColor = true;
+            this.btnvtor.UseVisualStyleBackColor = false;
             this.btnvtor.Click += new System.EventHandler(this.btnvtor_Click);
             // 
             // btnsr
             // 
+            this.btnsr.BackColor = System.Drawing.Color.Snow;
+            this.btnsr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsr.Location = new System.Drawing.Point(538, 13);
-            this.btnsr.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnsr.Margin = new System.Windows.Forms.Padding(6);
             this.btnsr.Name = "btnsr";
             this.btnsr.Size = new System.Drawing.Size(250, 65);
             this.btnsr.TabIndex = 3;
             this.btnsr.Text = "Среда";
-            this.btnsr.UseVisualStyleBackColor = true;
+            this.btnsr.UseVisualStyleBackColor = false;
             this.btnsr.Click += new System.EventHandler(this.btnsr_Click);
             // 
             // btnchet
             // 
+            this.btnchet.BackColor = System.Drawing.Color.Snow;
+            this.btnchet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnchet.Location = new System.Drawing.Point(800, 13);
-            this.btnchet.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnchet.Margin = new System.Windows.Forms.Padding(6);
             this.btnchet.Name = "btnchet";
             this.btnchet.Size = new System.Drawing.Size(250, 65);
             this.btnchet.TabIndex = 4;
             this.btnchet.Text = "Четверг";
-            this.btnchet.UseVisualStyleBackColor = true;
+            this.btnchet.UseVisualStyleBackColor = false;
             this.btnchet.Click += new System.EventHandler(this.btnchet_Click);
             // 
             // btnpyat
             // 
+            this.btnpyat.BackColor = System.Drawing.Color.Snow;
+            this.btnpyat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpyat.Location = new System.Drawing.Point(1062, 13);
-            this.btnpyat.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnpyat.Margin = new System.Windows.Forms.Padding(6);
             this.btnpyat.Name = "btnpyat";
             this.btnpyat.Size = new System.Drawing.Size(250, 65);
             this.btnpyat.TabIndex = 5;
             this.btnpyat.Text = "Пятница";
-            this.btnpyat.UseVisualStyleBackColor = true;
+            this.btnpyat.UseVisualStyleBackColor = false;
             this.btnpyat.Click += new System.EventHandler(this.btnpyat_Click);
             // 
             // btnsyb
             // 
+            this.btnsyb.BackColor = System.Drawing.Color.Snow;
+            this.btnsyb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsyb.Location = new System.Drawing.Point(1324, 13);
-            this.btnsyb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnsyb.Margin = new System.Windows.Forms.Padding(6);
             this.btnsyb.Name = "btnsyb";
             this.btnsyb.Size = new System.Drawing.Size(268, 65);
             this.btnsyb.TabIndex = 6;
             this.btnsyb.Text = "Суббота";
-            this.btnsyb.UseVisualStyleBackColor = true;
+            this.btnsyb.UseVisualStyleBackColor = false;
             this.btnsyb.Click += new System.EventHandler(this.btnsyb_Click);
             // 
             // btnvozr
             // 
+            this.btnvozr.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnvozr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnvozr.Location = new System.Drawing.Point(1324, 806);
-            this.btnvozr.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnvozr.Margin = new System.Windows.Forms.Padding(6);
             this.btnvozr.Name = "btnvozr";
             this.btnvozr.Size = new System.Drawing.Size(252, 56);
             this.btnvozr.TabIndex = 7;
             this.btnvozr.Text = "Вернуться назад";
-            this.btnvozr.UseVisualStyleBackColor = true;
+            this.btnvozr.UseVisualStyleBackColor = false;
             this.btnvozr.Click += new System.EventHandler(this.btnvozr_Click);
             // 
             // Raspform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.btnvozr);
             this.Controls.Add(this.btnsyb);
@@ -144,9 +160,10 @@
             this.Controls.Add(this.btnvtor);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnmon);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Raspform";
-            this.Text = "Raspform";
+            this.Text = "Расписание";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

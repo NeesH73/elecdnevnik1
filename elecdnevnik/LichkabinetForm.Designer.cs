@@ -85,6 +85,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(262, 106);
@@ -115,19 +116,22 @@
             // 
             // btnvozr
             // 
+            this.btnvozr.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnvozr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnvozr.Location = new System.Drawing.Point(616, 23);
             this.btnvozr.Margin = new System.Windows.Forms.Padding(6);
             this.btnvozr.Name = "btnvozr";
             this.btnvozr.Size = new System.Drawing.Size(224, 44);
             this.btnvozr.TabIndex = 7;
             this.btnvozr.Text = "Вернуться назад";
-            this.btnvozr.UseVisualStyleBackColor = true;
+            this.btnvozr.UseVisualStyleBackColor = false;
             this.btnvozr.Click += new System.EventHandler(this.btnvozr_Click);
             // 
             // LichkabinetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(864, 594);
             this.Controls.Add(this.btnvozr);
             this.Controls.Add(this.textboxgrup);
